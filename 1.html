@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta https-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>校外人员入校登记</title>
+    <style type="text/css" media="screen">
+        html {
+            touch-action: none ;
+        }
+
+    </style>
+    <script type="text/javascript">
+        var require = {
+            config:  {"site":{"name":"\u75ab\u60c5\u4fe1\u606f\u7f51\u683c\u5316\u667a\u80fd\u7ba1\u63a7\u5e73\u53f0","cdnurl":"","version":1722487326,"timezone":"Asia\/Shanghai","languages":{"backend":"zh-cn","frontend":"zh-cn"}},"upload":{"cdnurl":"","uploadurl":"ajax\/upload","bucket":"local","maxsize":"10mb","mimetype":"jpg,png,bmp,jpeg,gif,zip,rar,xls,xlsx","multipart":[],"multiple":false},"modulename":"index","controllername":"osideentry","actionname":"check","jsname":"frontend\/osideentry","moduleurl":"\/index","language":"zh-cn","__PUBLIC__":"\/","__ROOT__":"\/","__CDN__":""}        };
+
+
+    </script>
+    <link rel="stylesheet" href="/assets/css/weui.css"/>
+    <link rel="stylesheet" href="/assets/css/jquery-weui.css"/>
+    <link rel="stylesheet" href="/assets/css/example.css"/>
+
+</head>
+<body ontouchstart>
+
+<div class="weui-toptips weui-toptips_warn js_tooltips">错误提示</div>
+
+<div class="container" id="container">
+
+   <!--  <div class="weui_loading">
+        <i class="weui-loading weui-icon_toast"></i>
+        </div>
+    <p class="weui-toast_content">数据加载中</p> -->
+
+
+
+    <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>校外人员入校登记</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit">
+    <link href="/assets/css/frontend.css?v=1591683153" rel="stylesheet">
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
+    <!--[if lt IE 9]>
+    <script src="/assets/js/html5shiv.js"></script>
+    <script src="/assets/js/respond.min.js"></script>
+    <![endif]-->
+    <link href="/assets/css/user.css?v=1591683153" rel="stylesheet">
+    <style>
+        .navbar-inverse {
+            margin-bottom: 0;
+            color: #fff;
+            text-align: center;
+            font-size: 18px;
+            line-height: 50px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        main.content {
+            margin: 0;
+            padding: 0;
+            background-color: #efefef;
+            height: 100%;
+
+        }
+
+        main.content div {
+            background-color: inherit;
+
+        }
+
+        .headerbg img {
+            width: 100%;
+        }
+
+        @media (min-width: 800px) {
+            .fix-width {
+                width: 800px;
+                margin: 0 auto;
+            }
+
+            main.content {
+                width: 800px;
+                margin: 0 auto;
+            }
+        }
+
+        .navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus {
+            background-color: #a72a2a;
+        }
+
+        .navbar-inverse .navbar-nav > li > a {
+            color: #fff;
+        }
+
+        nav.bottom-nav {
+            background-color: #f3f0f0;
+            padding-top: 8px;
+            height: 50px;
+            line-height: 20px;
+            font-size: 13px;
+        }
+
+        nav.bottom-nav a {
+            color: #a72a2a;
+        }
+
+        .page__title {
+            padding: 0px 40px;
+            margin-top: 5px;
+            font-size: 20px;
+            color: #333;
+            text-align: center;
+        }
+        #check-alert{
+            color: #000;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        #gg-timer{
+            color: darkred;
+        }
+        #check-success-title{
+            font-weight: bold;
+            color: #0a6332;
+            font-size: 20px
+        }
+        #check-success-title{
+            font-weight: bold;
+            color: darkred;
+            font-size: 20px
+        }
+    </style>
+</head>
+<body>
+<style type="text/css" media="screen">
+
+    .weui-cells__title {
+        color: #000;
+        font-size: 17px;
+    }
+
+    .weui-cell::before {
+        border-top: none;
+    }
+
+    .weui-cells::before {
+        border-top: none;
+    }
+
+    .weui-cells::after {
+        border-bottom: none;
+    }
+
+    .my-weui-cell {
+        /* border-top: 1px solid #e5e5e5; */
+        border-bottom: 1px solid #e5e5e5;
+    }
+
+    .inline-input {
+        border: 1px solid #ccc;
+        display: inline;
+        width: 150px;
+    }
+
+    .page__hd {
+        /* padding: 0px; */
+        padding: 0px 5px;
+        padding-top: 10px;
+        /* border: 1px solid #000; */
+    }
+
+    .page__title {
+        margin-top: 5px;
+        font-size: 20px;
+        color: #333;
+        text-align: center;
+    }
+
+    .weui-panel__hd {
+        font-size: 15px;
+    }
+
+    .weui-dialog__bd {
+        text-align: left;
+    }
+
+    .weui-dialog__ft {
+        display: none;
+    }
+</style>
+<nav class="navbar navbar-inverse navbar-fixed-top fix-width bg-red" role="navigation">
+    校外人员入校登记
+</nav>
+<main class="content fix-width">
+    <style>
+        .container {
+            overflow: auto;
+            padding-right: 0;
+            padding-left: 0;
+            max-width: 800px;
+        }
+
+        .user-section {
+            border: none;
+        }
+
+        .login-section {
+            width: auto;
+            margin-top: 50px !important;
+            padding-top: 0 !important;
+        }
+
+        .login-main {
+            /*margin-top: 20px;*/
+        }
+
+        ::-webkit-scrollbar {
+            display: none
+        }
+
+        .controls {
+            padding-left: 15px;
+        }
+
+        .form-group {
+            padding-left: 30px;
+        }
+
+        .weui-btn {
+            margin: 0 10px;
+        }
+    </style>
+
+    <div class="user-section login-section">
+        <div class="login-main">
+            <form name="form1" id="form1" role="form" data-toggle="validator" method="POST" action="">
+                <input type="hidden" name="row[gate]" id="gate" value="1" >
+                <div class='weui-mask_transparent' id="toast">
+                    <div class="weui-toast weui_loading_toast weui-toast--visible">
+                        <div class="weui_loading">
+                            <i class="weui-loading weui-icon_toast"></i>
+                        </div>
+                        <p class="weui-toast_content">数据加载中</p>
+                    </div>
+                </div>
+                <div class="page" style="margin-top: 25px">
+                    <div class="page__bd">
+                        <div class="weui-cells weui-cells_form">
+                            <div class ="my-weui-cell" id="div_tel">
+                                <div class="weui-cells__title" id="tel_lable">手机号</div>
+                                <div class="weui-cell">
+                                    <div class="weui-cell__bd">
+                                        <input class="weui-input" type="tel" name='row[tel]' id='tel' required  pattern="[0-9]{11}" maxlength="11" placeholder="请填写手机号" notMatchTips="请输入正确的手机号"  emptyTips="请填写手机号" >
+                                    </div>
+                                    <div class="weui-cell__ft">
+                                        <i class="weui-icon-warn"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div style="margin-top: 15px;text-align: center">
+                                <button id="formSubmitBtn" type="button" class="weui-btn weui-btn_mini weui-btn_success">提交</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</main>
+
+<div style="display: none">
+    <script type="text/javascript" src="https://s4.cnzz.com/z_stat.php?id=1278607366&web_id=1278607366"></script>
+</div>
+<script type="text/javascript">
+    var wait = 0;
+    var interval = setInterval(function () {
+        var time = --wait;
+        if (time <= 0) {
+            document.getElementById('toast').style.display = "none";
+        }
+    }, 1000);
+
+
+</script>
+</body>
+</html>
+</div>
+
+<!-- <script type="text/javascript" src="/assets/js/index/jquery.min.js"></script>
+<script type="text/javascript" src="/assets/js/index/zepto.min.js"></script>
+<script type="text/javascript" src="/assets/js/index/jquery-weui.js"></script>
+<script type="text/javascript" src="/assets/js/index/fastclick.js"></script>
+<script type="text/javascript" src="/assets/js/require.js" defer async="true"></script> -->
+ <!-- <script src="/assets/js/require.js" data-main="/assets/js/require-frontend.js?v=1722487326"></script> -->
+<script src="/assets/js/require.js" data-main="/assets/js/index/main.js?v=1722487326"></script>
+
+</body>
+</html>
