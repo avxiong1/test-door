@@ -32,7 +32,7 @@ jobs:
       - name: ==== 项目部署 ====
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./unpackage/dist/build/web
+          path: ./
   deploy:
     needs: build
     environment:
