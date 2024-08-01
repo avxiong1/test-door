@@ -24,7 +24,7 @@ jobs:
       - name: ==== 设置node版本 ====
         uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 14
           cache: yarn
       - name: ==== 设置页面 ====
         id: pages
