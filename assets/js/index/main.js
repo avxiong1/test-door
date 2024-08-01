@@ -1,7 +1,7 @@
 requirejs.config({
     // urlArgs: "v=" + requirejs.s.contexts._.config.config.site.version,
     urlArgs: "v=" + (new Date()).getTime(),
-    baseUrl: requirejs.s.contexts._.config.config.site.cdnurl + '。/assets/js/', //资源基础路径
+    baseUrl: requirejs.s.contexts._.config.config.site.cdnurl + './assets/js/', //资源基础路径
 
     paths: {
         'map':'index/require-map',
