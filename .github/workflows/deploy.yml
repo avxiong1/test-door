@@ -21,11 +21,11 @@ jobs:
     steps:
       - name: ==== 读取仓库内容 ====
         uses: actions/checkout@v4
-      - name: ==== 设置node版本 ====
-        uses: actions/setup-node@v3
-        with:
-          node-version: 16
-          cache: yarn
+      # - name: ==== 设置node版本 ====
+        # uses: actions/setup-node@v3
+        # with:
+        #   node-version: 16
+        #   cache: yarn
       - name: ==== 设置页面 ====
         id: pages
         uses: actions/configure-pages@v4
